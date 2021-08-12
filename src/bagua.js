@@ -20,7 +20,7 @@ class App extends React.Component {
 **/
 #div1{
    border-radius:50%;
-   box-shadow:0  0 3px rgba(0, 0, 0, 0.5) ;
+   box-shadow:0 0 3px rgba(0, 0, 0, 0.5) ;
    border:none;
 }
 /**八卦是阴阳形成的
@@ -41,7 +41,6 @@ class App extends React.Component {
  **/
 #div1::after {
    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);  
-
   }
 /**
  * 然后加一个白色的球
@@ -49,7 +48,7 @@ class App extends React.Component {
 #div1::before {
   background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%);
   }
- `,
+`,
       string1: '',
       n: 0,
       string3: ''
@@ -64,7 +63,6 @@ class App extends React.Component {
     let html = document.querySelector("#demo")
     let style = document.querySelector('#style')
     this.state.string3 = style.innerHTML
-
 // this.setState(()=>)
     setTimeout(() => {
       if (this.state.n > this.state.string.length - 1) {
@@ -72,12 +70,14 @@ class App extends React.Component {
       }
       if (this.state.string[this.state.n] === '\n') {
         this.state.string1 += '<br>'
+
       } else if (this.state.string[this.state.n] === ' ') {
         this.state.string1 += '&nbsp'
-        this.state.string3 += ' '
+        this.state.string3 += ''
       } else {
         this.state.string1 += this.state.string[this.state.n]
         this.state.string3 += this.state.string[this.state.n]
+
       }
       html.innerHTML = this.state.string1
       // this.setState(state =>
@@ -87,6 +87,7 @@ class App extends React.Component {
       window.scrollTo(0, 5000) //设置滚动条滚到底部
       html.scrollTo(0, 5000)
       this.state.n += 1
+
       this.handleClick()
     }, 0)
   }
@@ -95,15 +96,13 @@ class App extends React.Component {
   render() {
     return (<>
         <style id='style'>
+
         </style>
         <div id="demo" className="box">hi
         </div>
-        <div className='box1'>
-
-          <div id="div1">
-          </div>
+        <div className="box1">
+          <div id="div1"></div>
         </div>
-
       </>
     )
   }
